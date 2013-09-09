@@ -185,9 +185,10 @@ module.exports = function( grunt ) {
         src: [
           '<%= individual_files.vendor_js %>'
         ],
-        dest: '<%= build_dir %>/js/vendor',
+        dest: '<%= build_dir %>/js',
         expand: true,
-        flatten: true,
+        cwd: 'src',
+        flatten: false,
         filter: 'isFile'
       }
     },

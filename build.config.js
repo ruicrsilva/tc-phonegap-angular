@@ -30,10 +30,11 @@ module.exports = {
     ]
   },
 
+  // No SRC prefix here, to keep directory structure
   individual_files: {
     vendor_js: [
-      'src/vendor/html5shiv/html5shiv.js',
-      'src/vendor/json2/json2.js'
+      'vendor/html5shiv/html5shiv.js',
+      'vendor/json2/json2.js'
     ]
   },
 
