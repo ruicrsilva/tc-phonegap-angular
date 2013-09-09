@@ -19,12 +19,12 @@
     "angular-loader": "~v1.2.0-rc.2",
     "angular-route": "~v1.2.0-rc.2",
     "angular-animate": "~v1.2.0-rc.2",
-    "angular-ui-router": "~0.2.0"
+    "angular-ui-router": "~0.2.0",
+    "angular-ui-utils": "~0.0.4"
   },
   "devDependencies": {
     "angular-scenario": "~v1.2.0-rc.2",
-    "angular-mocks": "~v1.2.0-rc.2",
-    "angular-ui-utils": "~0.0.4"
+    "angular-mocks": "~v1.2.0-rc.2"
   },
   "licenses": [
     {

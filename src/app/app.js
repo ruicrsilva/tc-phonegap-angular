@@ -1,5 +1,5 @@
 angular.module( 'app', [
-  'app-templates',
+  'app-views',
   'app.home',
   'app.about',
   'ui.router',

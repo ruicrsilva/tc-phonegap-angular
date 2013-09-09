@@ -6,7 +6,8 @@ module.exports = {
     js: [
       'src/app/**/*.js',
       'src/common/**/*.js',
-      '!src/**/*.spec.js'
+      '!src/**/*.spec.js',
+      '!src/app/app-templates.js'
     ],
     jsUnit: [
       'src/**/*.spec.js'
@@ -22,10 +23,10 @@ module.exports = {
 
   vendor_files: {
     js: [
-      'vendor/polyfills/Array.js',
-      'vendor/angular/angular.js',
-      'vendor/angular-ui-router/angular-ui-router.js',
-      'vendor/angular-ui-utils/route/route.js'
+      'src/vendor/polyfills/Array.js',
+      'src/vendor/angular/angular.js',
+      'src/vendor/angular-ui-router/angular-ui-router.js',
+      'src/vendor/angular-ui-utils/route/route.js'
     ]
   }
 
