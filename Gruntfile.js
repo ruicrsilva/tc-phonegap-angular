@@ -55,6 +55,21 @@ module.exports = function( grunt ) {
     return connect.static( require( 'path' ).resolve( dir ) );
   };
   var modRewrite = require( 'connect-modrewrite' );
+  var modRewriteFiletypes = [
+    '.html',
+    '.js',
+    '.css',
+    '.swf',
+    '.jp(e?)g',
+    '.png',
+    '.gif',
+    '.xml',
+    '.svg',
+    '.eot',
+    '.ttf',
+    '.woff'
+  ];
+  var modRewriteRegExp = '!\\' + modRewriteFiletypes.join('|\\');
   var userConfig = require( './build.config.js' );
   var pkg = grunt.file.readJSON('package.json');
 
@@ -80,7 +95,7 @@ module.exports = function( grunt ) {
           middleware: function ( connect ) {
             return [
               modRewrite( [
-                '!\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.gif$ /index.html'
+                modRewriteRegExp + '$ /index.html'
               ] ),
               mountFolder( connect, 'src' )
             ];
@@ -95,7 +110,7 @@ module.exports = function( grunt ) {
           middleware: function ( connect ) {
             return [
               modRewrite( [
-                '!\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.gif$ /index.html'
+                modRewriteRegExp + '$ /index.html'
               ] ),
               mountFolder( connect, 'www' )
             ];
@@ -110,7 +125,7 @@ module.exports = function( grunt ) {
           middleware: function ( connect ) {
             return [
               modRewrite( [
-                '!\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.gif$ /index.no-ripple.html'
+                modRewriteRegExp + '$ /index.no-ripple.html'
               ] ),
               mountFolder( connect, 'src' )
             ];
