@@ -16,6 +16,65 @@ local files.
 platforms/android $ android update project --path .
 ```
 
+Tasks
+=====
+
+Build
+-----
+
+There is a grunt build task, configured to build all your assets into a minified
+`build/` directory.
+
+```sh
+$ grunt build
+```
+
+The build can be configured in `build.config.js`.
+
+
+Server
+------
+
+There is a task to start a connect web server to serve the given directory.
+
+This connect server is pre-configured for angular, using modRewrite to map all
+requests through index.html, and to inject LiveReload script into your html.
+
+There are 2 different web servers:
+
+#### SRC web server
+
+```sh
+$ grunt server:src
+```
+
+Starts a web server at `http://127.0.0.1:9001`.
+
+#### BUILD web server
+
+```sh
+$ grunt server:build
+```
+
+Starts a web server at `http://127.0.0.1:9002`.
+
+#### NO-RIPPLE web server
+
+```sh
+$ grunt server:no-ripple
+```
+
+Starts a web server at `http://127.0.0.1:9003`.
+
+Watch
+-----
+
+The watch task, will watch all files for changes, and handle the LiveReload.
+
+```sh
+$ grunt watch
+```
+
 Contributing
 ============
 
