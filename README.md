@@ -13,5 +13,5 @@ You will now need to update the android project, to have all the required
 local files.
 
 ```sh
-$ android update project --path .
+platforms/android $ android update project --path .
 ```
