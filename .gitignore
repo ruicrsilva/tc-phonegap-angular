@@ -1,0 +1,39 @@
+# App Files
+# ---------
+*.apk
+*.ap
+
+# Android
+# -------
+platforms/android/*.class
+platforms/android/bin/
+platforms/android/gen/
+platforms/android/assets/www/
+platforms/android/local.properties
+platforms/android/.classpath
+platforms/android/.project
+platforms/android/proguard/
+platforms/android/proguard-project.txt
+
+# Intelij
+# --------
+*.iml
+*.ipr
+*.iws
+
+# Node
+# ----
+node_modules/
+
+# Bower
+# -----
+bower_components
+
+# tc-angular
+# -----------
+tc-build-tmp
+
+# Misc
+#------
+.idea
+!.gitkeep
