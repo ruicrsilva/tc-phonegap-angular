@@ -38,9 +38,9 @@ module.exports = {
     ]
   },
 
-  license: 'Dual licensed with the Apache-2.0 or MIT license',
+  license: '',
 
-  build_dir: 'build',
+  build_dir: 'www',
 
   tmp_dir: 'tc-build-tmp',
 

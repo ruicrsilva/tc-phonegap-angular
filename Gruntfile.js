@@ -26,6 +26,7 @@ module.exports = function( grunt ) {
     'cssmin:app_css',
     'copy:fonts',
     'copy:img',
+    'copy:config',
     'targethtml:build',
     'htmlmin:index',
     'clean:tmp'
@@ -52,7 +53,6 @@ module.exports = function( grunt ) {
       ' * <%= pkg.name %>\n' +
       ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
       ' * @version <%= pkg.version %>\n' +
-      ' * @license <%= license %>\n' +
       ' */\n'
     },
 
@@ -75,14 +75,14 @@ module.exports = function( grunt ) {
       build: {
         options: {
           port: 9002,
-          base: 'build',
+          base: 'www',
           livereload: LIVERELOAD_PORT,
           middleware: function ( connect ) {
             return [
               modRewrite( [
                 '!\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.gif$ /index.html'
               ] ),
-              mountFolder( connect, 'build' )
+              mountFolder( connect, 'www' )
             ];
           }
         }
@@ -153,6 +153,14 @@ module.exports = function( grunt ) {
             cwd: 'src/img',
             dest: '<%= build_dir %>/img',
             filter: 'isFile'
+          }
+        ]
+      },
+      config: {
+        files: [
+          {
+            src: ['src/config.xml'],
+            dest: '<%= build_dir %>/config.xml'
           }
         ]
       }

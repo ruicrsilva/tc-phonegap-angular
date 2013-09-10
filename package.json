@@ -1,8 +1,8 @@
 {
-  "name": "tc-angular",
+  "name": "tc-phonegap-angular",
   "version": "0.0.0",
-  "description": "A boilerplate angular.js application",
-  "homepage": "https://github.com/ThreeceeStudios/tc-angular",
+  "description": "A angular and phonegap application boilerplate, using tc-angular",
+  "homepage": "https://github.com/ThreeceeStudios/tc-phonegap-angular",
   "author": "Threecee Studios",
   "dependencies": {},
   "devDependencies": {
@@ -27,15 +27,15 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://raw.github.com/ThreeceeStudios/tc-angular/master/LICENSE-MIT"
+      "url": "https://raw.github.com/ThreeceeStudios/tc-phonegap-angular/master/LICENSE-MIT"
     },
     {
       "type": "Apache-2.0",
-      "url": "https://raw.github.com/ThreeceeStudios/tc-angular/master/LICENSE-APACHE-2.0"
+      "url": "https://raw.github.com/ThreeceeStudios/tc-phonegap-angular/master/LICENSE-APACHE-2.0"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ThreeceeStudios/tc-angular.git"
+    "url": "https://github.com/ThreeceeStudios/tc-phonegap-angular.git"
   }
 }
