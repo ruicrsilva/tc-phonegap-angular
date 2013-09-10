@@ -1,6 +1,6 @@
 {
   "name": "tc-phonegap-angular",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A angular and phonegap application boilerplate, using tc-angular",
   "homepage": "https://github.com/ThreeceeStudios/tc-phonegap-angular",
   "author": "Threecee Studios",

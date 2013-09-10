@@ -347,15 +347,8 @@ module.exports = function( grunt ) {
           'bower.json'
         ],
         updateConfigs: [],
-        commit: true,
-        commitMessage: 'Release v%VERSION%',
-        commitFiles: [
-          'package.json',
-          'bower.json'
-        ],
-        createTag: true,
-        tagName: 'v%VERSION%',
-        tagMessage: 'Version %VERSION%',
+        commit: false,
+        createTag: false,
         push: false
       }
     }
