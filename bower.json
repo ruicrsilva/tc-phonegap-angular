@@ -1,0 +1,43 @@
+{
+  "name": "tc-angular",
+  "version": "0.0.0",
+  "description": "A boilerplate angular.js application",
+  "homepage": "https://github.com/ThreeceeStudios/tc-angular",
+  "author": "Threecee Studios",
+  "main": "",
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~v1.2.0-rc.2",
+    "angular-touch": "~v1.2.0-rc.2",
+    "angular-resource": "~v1.2.0-rc.2",
+    "angular-i18n": "~v1.2.0-rc.2",
+    "angular-sanitize": "~v1.2.0-rc.2",
+    "angular-cookies": "~v1.2.0-rc.2",
+    "angular-loader": "~v1.2.0-rc.2",
+    "angular-route": "~v1.2.0-rc.2",
+    "angular-animate": "~v1.2.0-rc.2",
+    "angular-ui-router": "~0.2.0",
+    "angular-ui-utils": "~0.0.4"
+  },
+  "devDependencies": {
+    "angular-scenario": "~v1.2.0-rc.2",
+    "angular-mocks": "~v1.2.0-rc.2"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/ThreeceeStudios/tc-angular/master/LICENSE-MIT"
+    },
+    {
+      "type": "Apache-2.0",
+      "url": "https://raw.github.com/ThreeceeStudios/tc-angular/master/LICENSE-APACHE-2.0"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThreeceeStudios/tc-angular.git"
+  }
+}

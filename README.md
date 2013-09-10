@@ -1,5 +1,5 @@
-tc-phonegap
-===========
+tc-phonegap-angular
+===================
 
 A hello world phonegap application.
 
