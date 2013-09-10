@@ -64,6 +64,7 @@ module.exports = function( grunt ) {
     '.png',
     '.gif',
     '.xml',
+    '.json',
     '.svg',
     '.eot',
     '.ttf',
