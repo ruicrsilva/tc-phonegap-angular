@@ -8,9 +8,7 @@
   <script src="vendor/json2/json2.js"></script>
 </head>
 <body>
-
-<!-- CONTENT HERE ------------------------------------------------------------->
-
+<!-- CONTENT ------------------------------------------------------------------>
 <h1>{{ title }}</h1>
 <ul>
   <li ui-route="/home" ng-class="{active:$uiRoute}">
@@ -24,15 +22,23 @@
     </a>
   </li>
 </ul>
-
 <div ui-view="main"></div>
-
 <!-- END CONTENT -------------------------------------------------------------->
 
+<!-- PHONEGAP ----------------------------------------------------------------->
+<!--(if target build)><!-->
+<script src="phonegap.js"></script>
+<!--<!(endif)-->
+<!-- END PHONEGAP ------------------------------------------------------------->
 
-<!-- DEVELOPMENT -------------------------------------------------------------->
-<!--(if target dev)><!-->
+<!-- PHONEGAP DESKTOP SHIM ---------------------------------------------------->
+<!--(if target no-ripple)>
+<script src="phonegap-desktop.js"></script>
+<!(endif)-->
+<!-- END PHONEGAP DESKTOP SHIM ------------------------------------------------>
 
+<!-- DEVELOPMENT JAVASCRIPT --------------------------------------------------->
+<!--(if target no-ripple)><!-->
 <script src="vendor/polyfills/Array.js"></script>
 
 <script src="vendor/angular/angular.js"></script>
@@ -45,16 +51,13 @@
 <script src="app/home/home.js"></script>
 <script src="app/about/about.js"></script>
 <script src="common/titleService/titleService.js"></script>
-
 <!--<!(endif)-->
-<!-- END DEVELOPMENT ---------------------------------------------------------->
+<!-- END DEVELOPMENT JAVASCRIPT ----------------------------------------------->
 
-<!-- PRODUCTION --------------------------------------------------------------->
+<!-- PRODUCTION JAVASCRIPT ---------------------------------------------------->
 <!--(if target build)>
 <script src="js/app.js"></script>
 <!(endif)-->
-<!-- END PRODUCTION ----------------------------------------------------------->
-
-<!-- END SCRIPTS -------------------------------------------------------------->
+<!-- END PRODUCTION JAVASCRIPT ------------------------------------------------>
 </body>
 </html>

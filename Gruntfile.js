@@ -32,7 +32,21 @@ module.exports = function( grunt ) {
     'clean:tmp'
   ] );
 
+  grunt.registerTask( 'no-ripple', [
+    'targethtml:no-ripple'
+  ] );
 
+  grunt.registerTask( 'server:src', [
+    'connect:src:keepalive'
+  ] );
+
+  grunt.registerTask( 'server:build', [
+    'connect:build:keepalive'
+  ] );
+
+  grunt.registerTask( 'server:no-ripple', [
+    'connect:no-ripple:keepalive'
+  ] );
 
 
   var LIVERELOAD_PORT = 35729;
@@ -86,12 +100,36 @@ module.exports = function( grunt ) {
             ];
           }
         }
+      },
+      "no-ripple": {
+        options: {
+          port: 9001,
+          base: 'src',
+          livereload: LIVERELOAD_PORT,
+          middleware: function ( connect ) {
+            return [
+              modRewrite( [
+                '!\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.gif$ /index.no-ripple.html'
+              ] ),
+              mountFolder( connect, 'src' )
+            ];
+          }
+        }
       }
     },
-
     watch: {
+      index: {
+        files: 'src/index.html',
+        tasks: [ 'targethtml:no-ripple' ],
+        options: {
+          livereload: LIVERELOAD_PORT
+        }
+      },
       html: {
-        files: 'src/**/*.html',
+        files: [
+          'src/**/*.html',
+          '!src/index.html'
+        ],
         tasks: [],
         options: {
           livereload: LIVERELOAD_PORT
@@ -257,6 +295,13 @@ module.exports = function( grunt ) {
       build: {
         files: {
           '<%= tmp_dir %>/index.html': [
+            '<%= app_files.index %>'
+          ]
+        }
+      },
+      "no-ripple": {
+        files: {
+          'src/index.no-ripple.html': [
             '<%= app_files.index %>'
           ]
         }

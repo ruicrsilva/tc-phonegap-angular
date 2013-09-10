@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" id="ng-app" ng-app="app" ng-controller="AppCtrl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="vendor/html5shiv/html5shiv.js"></script>
+  <script src="vendor/json2/json2.js"></script>
+</head>
+<body>
+<!-- CONTENT ------------------------------------------------------------------>
+<h1>{{ title }}</h1>
+<ul>
+  <li ui-route="/home" ng-class="{active:$uiRoute}">
+    <a href="/home">
+      Home
+    </a>
+  </li>
+  <li ui-route="/about" ng-class="{active:$uiRoute}">
+    <a href="/about">
+      About
+    </a>
+  </li>
+</ul>
+<div ui-view="main"></div>
+<!-- END CONTENT -------------------------------------------------------------->
+
+<!-- PHONEGAP -----------------------------------------------------------------><!-- END PHONEGAP ------------------------------------------------------------->
+
+<!-- PHONEGAP DESKTOP SHIM ---------------------------------------------------->
+
+<script src="phonegap-desktop.js"></script>
+
+<!-- END PHONEGAP DESKTOP SHIM ------------------------------------------------>
+
+<!-- DEVELOPMENT JAVASCRIPT --------------------------------------------------->
+
+<script src="vendor/polyfills/Array.js"></script>
+
+<script src="vendor/angular/angular.js"></script>
+<!--<script src="vendor/angular-i18n/angular-locale_en-gb.js"></script>-->
+<script src="vendor/angular-ui-router/angular-ui-router.js"></script>
+<script src="vendor/angular-ui-utils/route/route.js"></script>
+
+<script src="app/app.js"></script>
+<script src="app/app-templates.js"></script>
+<script src="app/home/home.js"></script>
+<script src="app/about/about.js"></script>
+<script src="common/titleService/titleService.js"></script>
+
+<!-- END DEVELOPMENT JAVASCRIPT ----------------------------------------------->
+
+<!-- PRODUCTION JAVASCRIPT ----------------------------------------------------><!-- END PRODUCTION JAVASCRIPT ------------------------------------------------>
+</body>
+</html>
