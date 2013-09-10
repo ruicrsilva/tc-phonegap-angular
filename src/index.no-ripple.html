@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="ng-app" ng-app="app" ng-controller="AppCtrl">
+<html lang="en" id="ng-app" ng-controller="AppCtrl">
 <head>
   <meta charset="utf-8"/>
   <meta name="format-detection" content="telephone=no"/>
@@ -25,18 +25,23 @@
 <div ui-view="main"></div>
 <!-- END CONTENT -------------------------------------------------------------->
 
-<!-- PHONEGAP -----------------------------------------------------------------><!-- END PHONEGAP ------------------------------------------------------------->
 
-<!-- PHONEGAP DESKTOP SHIM ---------------------------------------------------->
+<!----------------------------------------------------------------------------->
+<!-- Cordova --><!----------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------------->
+<!-- Phonegap Desktop -->
 
 <script src="phonegap-desktop.js"></script>
 
-<!-- END PHONEGAP DESKTOP SHIM ------------------------------------------------>
+<!----------------------------------------------------------------------------->
 
-<!-- DEVELOPMENT JAVASCRIPT --------------------------------------------------->
+
+<!----------------------------------------------------------------------------->
+<!-- Development Javascript -->
 
 <script src="vendor/polyfills/Array.js"></script>
-
 <script src="vendor/angular/angular.js"></script>
 <!--<script src="vendor/angular-i18n/angular-locale_en-gb.js"></script>-->
 <script src="vendor/angular-ui-router/angular-ui-router.js"></script>
@@ -48,8 +53,22 @@
 <script src="app/about/about.js"></script>
 <script src="common/titleService/titleService.js"></script>
 
-<!-- END DEVELOPMENT JAVASCRIPT ----------------------------------------------->
+<script src="app/app-bootstrap.js"></script>
 
-<!-- PRODUCTION JAVASCRIPT ----------------------------------------------------><!-- END PRODUCTION JAVASCRIPT ------------------------------------------------>
+<!----------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------------->
+<!-- LiveReload for SRC server --><!----------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------------->
+<!-- Production --><!----------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------------->
+<!-- Bootstrap the Application -->
+<script>app.initialize();</script>
+<!----------------------------------------------------------------------------->
 </body>
 </html>

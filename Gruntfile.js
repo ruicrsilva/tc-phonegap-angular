@@ -33,6 +33,7 @@ module.exports = function( grunt ) {
   ] );
 
   grunt.registerTask( 'no-ripple', [
+    'clean:index-no-ripple',
     'targethtml:no-ripple'
   ] );
 
@@ -103,7 +104,7 @@ module.exports = function( grunt ) {
       },
       "no-ripple": {
         options: {
-          port: 9001,
+          port: 9003,
           base: 'src',
           livereload: LIVERELOAD_PORT,
           middleware: function ( connect ) {
@@ -120,7 +121,7 @@ module.exports = function( grunt ) {
     watch: {
       index: {
         files: 'src/index.html',
-        tasks: [ 'targethtml:no-ripple' ],
+        tasks: [ 'clean:index-no-ripple', 'targethtml:no-ripple' ],
         options: {
           livereload: LIVERELOAD_PORT
         }
@@ -128,7 +129,8 @@ module.exports = function( grunt ) {
       html: {
         files: [
           'src/**/*.html',
-          '!src/index.html'
+          '!src/index.html',
+          '!src/index.no-ripple.html'
         ],
         tasks: [],
         options: {
@@ -206,7 +208,8 @@ module.exports = function( grunt ) {
 
     clean: {
       build: [ '<%= build_dir %>/' ],
-      tmp: [ '<%= tmp_dir %>' ]
+      tmp: [ '<%= tmp_dir %>' ],
+      "index-no-ripple": [ 'src/index.no-ripple.html' ]
     },
 
     uglify: {

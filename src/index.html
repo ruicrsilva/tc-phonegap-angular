@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="ng-app" ng-app="app" ng-controller="AppCtrl">
+<html lang="en" id="ng-app" ng-controller="AppCtrl">
 <head>
   <meta charset="utf-8"/>
   <meta name="format-detection" content="telephone=no"/>
@@ -25,22 +25,27 @@
 <div ui-view="main"></div>
 <!-- END CONTENT -------------------------------------------------------------->
 
-<!-- PHONEGAP ----------------------------------------------------------------->
-<!--(if target build)><!-->
-<script src="phonegap.js"></script>
-<!--<!(endif)-->
-<!-- END PHONEGAP ------------------------------------------------------------->
 
-<!-- PHONEGAP DESKTOP SHIM ---------------------------------------------------->
+<!----------------------------------------------------------------------------->
+<!-- Cordova -->
+<!--(if target src)><!-->
+<script src="cordova-2.5.0.js"></script>
+<!--<!(endif)-->
+<!----------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------------->
+<!-- Phonegap Desktop -->
 <!--(if target no-ripple)>
 <script src="phonegap-desktop.js"></script>
 <!(endif)-->
-<!-- END PHONEGAP DESKTOP SHIM ------------------------------------------------>
+<!----------------------------------------------------------------------------->
 
-<!-- DEVELOPMENT JAVASCRIPT --------------------------------------------------->
+
+<!----------------------------------------------------------------------------->
+<!-- Development Javascript -->
 <!--(if target no-ripple)><!-->
 <script src="vendor/polyfills/Array.js"></script>
-
 <script src="vendor/angular/angular.js"></script>
 <!--<script src="vendor/angular-i18n/angular-locale_en-gb.js"></script>-->
 <script src="vendor/angular-ui-router/angular-ui-router.js"></script>
@@ -51,13 +56,32 @@
 <script src="app/home/home.js"></script>
 <script src="app/about/about.js"></script>
 <script src="common/titleService/titleService.js"></script>
-<!--<!(endif)-->
-<!-- END DEVELOPMENT JAVASCRIPT ----------------------------------------------->
 
-<!-- PRODUCTION JAVASCRIPT ---------------------------------------------------->
+<script src="app/app-bootstrap.js"></script>
+<!--<!(endif)-->
+<!----------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------------->
+<!-- LiveReload for SRC server -->
+<!--(if target src)><!-->
+<!--<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
+<!--<!(endif)-->
+<!----------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------------->
+<!-- Production -->
 <!--(if target build)>
+<script src="phonegap.js"></script>
 <script src="js/app.js"></script>
 <!(endif)-->
-<!-- END PRODUCTION JAVASCRIPT ------------------------------------------------>
+<!----------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------------->
+<!-- Bootstrap the Application -->
+<script>app.initialize();</script>
+<!----------------------------------------------------------------------------->
 </body>
 </html>

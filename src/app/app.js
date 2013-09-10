@@ -13,5 +13,5 @@ angular.module( 'app', [
   titleService.setSuffix( ' | tc-angular' );
 } )
 .controller( 'AppCtrl', function AppCtrl( $scope, $location ) {
-  $scope.title = 'tc-angular boilerplate';
+  $scope.title = 'tc-phonegap-angular';
 } );
