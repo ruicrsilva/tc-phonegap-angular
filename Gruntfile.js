@@ -11,8 +11,9 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks( 'grunt-html2js' );
   grunt.loadNpmTasks( 'grunt-strip' );
   grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-  grunt.loadNpmTasks('grunt-targethtml');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks( 'grunt-targethtml' );
+  grunt.loadNpmTasks( 'grunt-contrib-htmlmin' );
+  grunt.loadNpmTasks( 'grunt-bump' );
 
   grunt.registerTask( 'build', [
     'clean:build',
@@ -336,6 +337,26 @@ module.exports = function( grunt ) {
         files: {
           '<%= build_dir %>/index.html': '<%= tmp_dir %>/index.html'
         }
+      }
+    },
+
+    bump: {
+      options: {
+        files: [
+          'package.json',
+          'bower.json'
+        ],
+        updateConfigs: [],
+        commit: true,
+        commitMessage: 'Release v%VERSION%',
+        commitFiles: [
+          'package.json',
+          'bower.json'
+        ],
+        createTag: true,
+        tagName: 'v%VERSION%',
+        tagMessage: 'Version %VERSION%',
+        push: false
       }
     }
 
